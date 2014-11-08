@@ -1,0 +1,30 @@
+{
+  "name": "Pastel",
+  "version": "1.0.0",
+  "description": "Pastel é um Framework para desenvolvimento Front End simples e com algumas ferramentas maneiras como o Bower e Grunt. Tudo o que você precisa é ler o about.md e tacá-le pau nesse carrinho! ",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-usemin": "^2.5.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-imagemin": "^0.9.0",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-uncss": "^0.3.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Oliveira",
+  "license": "ISC"
+}

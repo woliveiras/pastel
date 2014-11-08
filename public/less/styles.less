@@ -1,0 +1,35 @@
+//Fique a vonts para criar seus estilos nesse arquivo usando Less
+//Após escrever tudo oque quiser execute o comando grunt less e veja a mágica
+//Uma coisa mais louca é executar grunt watch e deixar tudo acontecer sozinho
+//Que maravilha não?
+
+
+//Exemplo básico
+@titulo : #fff;
+@fundo 	: #6daf71;
+@bkg-color : #2f3135;
+
+html{
+	font: 17px/1.4 'Open Sans',sans-serif;
+}
+
+body {
+	background-color: @bkg-color;
+	background-image: url(../img/bkg.png);
+}
+
+h1{
+	font-size: 3em;
+	line-height: 1.2em;
+	margin: 0 .5em .75em;
+}
+
+.welcome{
+	display: block;
+	width: 50%;
+	margin: 10% auto;
+	color: @titulo;
+	text-align: center;
+	background: @fundo;
+	border: 1px solid #4f8251;
+}

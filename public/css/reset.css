@@ -1,0 +1,39 @@
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: 0;
+}
+
+/* Lists
+   ========================================================================== */
+
+/**
+ * Remove styles of lists
+ */
+
+ ul li{
+  list-style: none;
+ }
+  /* iframes
+   ========================================================================== */
+/**
+ * Remove styles from iframes
+ * NOTE: For a scrollbar scroll does not appear, its needed
+ * the scrolling="no" param in iframe into HTML
+ */
+
+iframe{
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}

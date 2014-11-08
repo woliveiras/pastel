@@ -1,0 +1,8 @@
+# Adicione aqui os arquivos que você deseja que o Git ignore
+/vendor
+/node_modules
+/public/assets/
+*.lock
+*.DS_Store
+*.swp
+*.out
