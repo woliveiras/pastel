@@ -2,24 +2,29 @@
 
 // Inicializando o Grunt
 module.exports = function(grunt) {
-   grunt.initConfig({        
+   grunt.initConfig({
+   		/****** Diretórios ******/
+
+        paths:{
+          prod : 'dist/', // Pasta de distribuição. Será enviada para o servidor.
+          dev : 'src/' //Pasta onde deve ser desenvolvido o projeto.
+        },
+
         /****** Tasks ******/
 
         /* Deleta a pasta dist, caso a mesma já exista */
         clean: {
               dist: {
-                  src: 'dist' //Origem (Será deletado)
+                  src: '<%= paths.prod %>' //pasta que será deletada
               }
          },
 
-        /* Copia os arquivos da pasta de desenvolvimento (Pasta public) para a pasta
-            de distribuição (Pasta dist). Envie a pasta dist para o servidor
-            porém só depois do comando grunt no terminal, pois ele vai otimizar o projeto.*/
+        /* Copia os arquivos de src para dist */
         copy: {
           public: {
-                cwd: 'public',  //Origem
+                cwd: '<%= paths.dev %>', //Origem
                 src: '**',      //O que será copiado
-                dest: 'dist',   //Destino
+                dest: '<%= paths.prod %>', //Destino
                 expand: true
           }
         },
@@ -34,26 +39,10 @@ module.exports = function(grunt) {
           my_target: {
             files: [{
               expand: true,   //Adiciona os arquivos dinamicamente
-              cwd: 'public/js',  //Origem
+              cwd: '<%= paths.dev %>js',  //Origem
               src: ['**/*.js', '!*.min.js'], //O que será minificado
-              dest: 'dist/js' //Destino
+              dest: '<%= paths.prod %>js' //Destino
             }]
-          }
-        },
-
-        /* Minificar CSS */
-        cssmin: {
-          options:{
-            keepSpecialComments: 0
-          },
-          production: {
-            expand: true,  //Adiciona os arquivos dinamicamente
-            cwd: 'public/css/', //Origem
-            src: ['**/*.css', '!*.min.css'], //O que será minificado
-            dest: 'dist/css/',//Destino
-            //Remova esses comentários se quiser adicionar
-            // a extensão .min.css no arquivo.
-            // ext: '.min.css'
           }
         },
 
@@ -61,14 +50,14 @@ module.exports = function(grunt) {
          imagemin: {
             public: {
                 options: { //Opções de minificação
-                    optimizationLevel: 8,
+                    optimizationLevel: 7,
                     progressive: true
                 },
                 files: [{
-                    expand: true,//Adiciona os arquivos dinamicamente
-                    cwd: 'public/img',//Origem
+                    expand: true, //Adiciona os arquivos dinamicamente
+                    cwd: '<%= paths.dev %>img',//Origem
                     src: '**/*.{png,jpg,gif}',//O que será minificado
-                    dest: 'dist/img'//Destino
+                    dest: '<%= paths.prod %>img'//Destino
                 }]
             }
         },
@@ -77,26 +66,27 @@ module.exports = function(grunt) {
         less: {
             development: { //Opções de compilação
               options: {
-                compress: true,
-                optimization: 2
+                compress: true, //Minificar o arquivo
+                optimization: 2 //Nível de otimização do arquivo gerado
               },
               files: {
-                //Arquivo que será gerado : arquivo .less
-                "public/css/style.min.css": ["public/less/*.less"]
+                //Siga o padrão:
+                //caminho/arquivo-gerado.min.css : caminho/arquivo.less
+                '<%= paths.dev %>css/style.min.css': ['<%= paths.dev %>less/*.less']
               }
             },
           },
 
-        /* Monitorar diretório e rodar outras tasks sempre que 
+        /* Monitorar diretório e rodar outras tasks sempre que
         determinado evento ocorrer. Ex.: Alterar um CSS */
         watch: {
           less: {
-              files: ['public/less/**/*.less'], // Arquivos que serão monitorados
+              files: ['<%= paths.dev %>less/**/*.less'], // Arquivos que serão monitorados
                 tasks: ['less'], //Task que será executada
                 options: {
                   nospawn: true
                 }
-              },                   
+              },
           }
 });
 
@@ -104,7 +94,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -114,6 +103,6 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean', 'copy']); //Cria a pasta de distribuição, se ela já existir, apaga e cria de novo
 
   //Task Default (Será executada quando rodar Grunt no terminal)
-  //Rode essa Task quando finalizar o projeto. 
-  grunt.registerTask('default', ['dist', 'uglify', 'cssmin', 'imagemin', 'less',]);
+  //Rode essa Task quando finalizar o projeto.
+  grunt.registerTask('default', ['dist', 'uglify', 'imagemin', 'less',]);
 };

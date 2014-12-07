@@ -1,13 +1,3 @@
 {
-	/*------------------------------------------------------------
-	Diretório onde os pacotes serão instalados.
-	--------------------------------------------------------------*/
-	"directory":"public/assets/",
-
-	/*------------------------------------------------------------
-	Aqui vai o local onde o arquivo de dependências se encontra
-	   se quiser colocar em seu diretório /home o arquivo servirá 
-	   como configurações globais. 
-	--------------------------------------------------------------*/
-	"json":"bower.json"
+	"directory":"src/assets"
 }

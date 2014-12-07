@@ -1,7 +1,7 @@
 {
-  "name": "Pastel",
-  "version": "1.0.0",
-  "description": "Pastel é um Framework para desenvolvimento Front End simples e com algumas ferramentas maneiras como o Bower e Grunt. Tudo o que você precisa é ler o about.md e tacá-le pau nesse carrinho! ",
+  "name": "pastel",
+  "version": "0.0.2",
+  "description": "Pastel é um template para iniciar rapidamente projetos Front End contando com Bower, Grunt, Twitter Bootstrap e algumas dependências maneiras que utilizamos no nosso dia a dia para acelerar nossa produtividade",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5",
@@ -25,6 +25,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woliveiras/pastel.git"
+  },
+  "keywords": [
+    "Javascript",
+    "CSS",
+    "HTML",
+    "Bootstrap",
+    "Grunt",
+    "Bower"
+  ],
   "author": "William Oliveira",
-  "license": "ISC"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/woliveiras/pastel/issues"
+  }
 }
