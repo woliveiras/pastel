@@ -72,7 +72,7 @@ module.exports = function(grunt) {
               files: {
                 //Siga o padrão:
                 //caminho/arquivo-gerado.min.css : caminho/arquivo.less
-                '<%= paths.dev %>css/style.min.css': ['<%= paths.dev %>less/*.less']
+                '<%= paths.dev %>css/style.min.css': ['<%= paths.dev %>less/default.less']
               }
             },
           },
