@@ -1,29 +1,43 @@
-Bem vindo ao Pastel!
-==================
+#Bem vindo ao Pastel!
 
-Por que Pastel?
----------------
+O *Pastel* é um pequeno Boilerplate que eu criei para agilizar meus projetos. Deixei aqui um Gruntfile.js configuradinho e as Tasks mais maneiras que achei. No bower.json temos as dependências (Uns plugins legais que tenho utilizado) e eu uso o [Twitter Bootstrap](http://getbootstrap.com/) junto com o Less nos meus projetos, então já está tudo configurado para esse Workflow.
 
-> Você já viu como a galera faz o pastel rapidinho na feira ou em pastelarias? (É bem rápido!)
+#####Por que Pastel?
 
-Então, use esse template da mesma forma: Basta você baixar, escolher os ingredientes, fritar e seu projeto está pronto!
-*(Fritar é um termo conhecido por alguns brasileiros e significaria arrebentar/botar pra quebrar/essas coisas  ;) )*
 
-O Pastel é um template de projetos que eu montei para dar o Start no desenvolvimento de pequenos progetos.
-Ele não é um Framework, mas da pra utilizar vários em conjunto dele.
-Ele serve para iniciar o projeto com algumas tasks, plugins, frameworks e estrutura inicial.
-Já tem quase tudo aqui, Bootstrap (Se você gosta), algumas tasks maneiras pro Grunt e alguns plugins legais de JQuery e em JS.
-Se você curte Less, vai gostar também.
-O que não quiser baixar como dependência, basta remover do bower.json e o que quiser mudar nas tarefas, basta configurar no Gruntfile.js.
+> *Você já viu como a galera faz o pastel rapidinho na feira ou em pastelarias? (É muito rápido e fica bom!)*
 
-**Por onde começar?**
+####Por onde começar?
 
-*Suponho que você possua o Nodejs, Grunt e Bower instalados na máquina, se não tiver leia o arquivo HELP.md*
+Instale os Requisitos:
+- [NodeJS](http://nodejs.org/)
+- [GruntJS](http://gruntjs.com/)
+- [Bower](http://bower.io/)
 
-Depois de baixar o Pastel, rode um *npm install* no diretório principal (Onde esse arquivo se encontra), em seguida *bower install*.
+Se você não souber instalar esses programas, não tem problema. Da uma olhada no meu [Blog](http://woliveiras.com.br/tag/pastel/) que eu expliquei tudo lá.
 
-Para ver as dependências que foram instaladas rode *bower ls*.
+Rode um **npm install** no diretório principal (Onde esse arquivo se encontra), em seguida **bower install**. Serão instalados todos os plugins do Grunt e as dependências que estão no Bower.
 
->Lembre-se de que o Pastel não é um Framework, mas um template para auxiliar o Workflow.
+Se quiser ver as dependências que foram instaladas rode *bower ls*.
+
+####Comandos do Grunt
+
+- **grunt copy**	 - copia os arquivos de /src para /dist
+- **grunt clean**	 - destrói a pasta /dist
+- **grunt uglify**	 - minifica .js
+- **grunt imagemin** - minifica as imagens
+- **grunt less**     - compila os arquivos .less
+- **grunt sprite**   - cria um sprite com as imagens que estiverem dentro de src/img/icons/
+- **grunt watch**	 - monitora os arquivos .less e compila sempre que são salvos.
+
+####Excluir a pasta node_modules no Windows
+
+Pra quem usa *nix é facinho excluir essa pasta, porém para usuários Windows é mais chato. Portanto deixei um Scriptzinho para facilitar.
+
+Execute o rm_node_modules.bat como administrador
+	(Clique com o direito executar como administrador).
+	Será necessário executar duas vezes.
+
+>Lembre-se de que o Pastel não é um Framework, mas um boilerplate para auxiliar o Workflow.
 Se quiser melhorar as tasks, plugins, configurações, acrescentar algo maneiro, lança ae!
 Eu deixei tudo configurado de modo que um iniciante entenda, então é facinho pra qualquer um ajudar. ;D

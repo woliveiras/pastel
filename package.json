@@ -1,7 +1,7 @@
 {
   "name": "pastel",
   "version": "0.0.2",
-  "description": "Pastel é um template para iniciar rapidamente projetos Front End contando com Bower, Grunt, Twitter Bootstrap e algumas dependências maneiras que utilizamos no nosso dia a dia para acelerar nossa produtividade",
+  "description": "Pastel é meu Boilerplate de Front End. Use para dar aquele start rápido no desenvolvimento Front End com Tarefas preparadas no Grunt, Dependências prontas no Bower e tudo configurado para usar Less com Twitter Bootstrap",
   "main": "Gruntfile.js",
   "dependencies": {
     "grunt": "^0.4.5",
@@ -20,6 +20,7 @@
     "grunt-contrib-imagemin": "^0.9.0",
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-spritesmith": "^3.5.0",
     "grunt-uncss": "^0.3.7"
   },
   "scripts": {
@@ -37,7 +38,7 @@
     "Grunt",
     "Bower"
   ],
-  "author": "William Oliveira",
+  "author": "William Oliveira Souza",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/woliveiras/pastel/issues"

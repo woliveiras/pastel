@@ -50,7 +50,7 @@ module.exports = function(grunt) {
          imagemin: {
             public: {
                 options: { //Opções de minificação
-                    optimizationLevel: 7,
+                    optimizationLevel: 5,
                     progressive: true
                 },
                 files: [{
@@ -77,6 +77,15 @@ module.exports = function(grunt) {
             },
           },
 
+        /*Criar Sprites */
+        sprite:{
+          all: {
+            src: '<%= paths.dev %>imgicons/*.png',
+            dest: '<%= paths.dev %>imgspritesheet.png',
+            destCss: '<%= paths.dev %>imgsprites.css'
+          }
+        },
+
         /* Monitorar diretório e rodar outras tasks sempre que
         determinado evento ocorrer. Ex.: Alterar um CSS */
         watch: {
@@ -96,6 +105,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-spritesmith');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
 
