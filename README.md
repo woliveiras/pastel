@@ -1,13 +1,13 @@
-#Bem vindo ao Pastel!
+# Bem vindo ao Pastel!
 
 O *Pastel* é um pequeno Boilerplate que eu criei para agilizar meus projetos. Deixei aqui um Gruntfile.js configuradinho e as Tasks mais maneiras que achei. No bower.json temos as dependências (Uns plugins legais que tenho utilizado) e eu uso o [Twitter Bootstrap](http://getbootstrap.com/) junto com o Less nos meus projetos, então já está tudo configurado para esse Workflow.
 
-#####Por que Pastel?
+##### Por que Pastel?
 
 
 > *Você já viu como a galera faz o pastel rapidinho na feira ou em pastelarias? (É muito rápido e fica bom!)*
 
-####Por onde começar?
+#### Por onde começar?
 
 Instale os Requisitos:
 - [NodeJS](http://nodejs.org/)
@@ -20,7 +20,7 @@ Rode um **npm install** no diretório principal (Onde esse arquivo se encontra),
 
 Se quiser ver as dependências que foram instaladas rode *bower ls*.
 
-####Comandos do Grunt
+#### Comandos do Grunt
 
 - **grunt copy**	 - copia os arquivos de /src para /dist
 - **grunt clean**	 - destrói a pasta /dist
@@ -30,11 +30,11 @@ Se quiser ver as dependências que foram instaladas rode *bower ls*.
 - **grunt sprite**   - cria um sprite com as imagens que estiverem dentro de src/img/icons/
 - **grunt watch**	 - monitora os arquivos .less e compila sempre que são salvos.
 
-####Excluir a pasta node_modules no Windows
+#### Excluir a pasta node_modules no Windows
 
 Pra quem usa *nix é facinho excluir essa pasta, porém para usuários Windows é mais chato. Portanto deixei um Scriptzinho para facilitar.
 
-Execute o rm_node_modules.bat como administrador
+Execute o `rm_node_modules.bat` como administrador
 	(Clique com o direito executar como administrador).
 	Será necessário executar duas vezes.
 
